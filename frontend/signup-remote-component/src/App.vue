@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import OnClickExampleVue from "./components/OnClickExample.vue";
-import Signup from "./components/Signup.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+// import OnClickExampleVue from "./components/OnClickExample.vue";
+// import Signup from "./components/Signup.vue";
 import OnClickExample from "./components/OnClickExample.vue";
 </script>
 

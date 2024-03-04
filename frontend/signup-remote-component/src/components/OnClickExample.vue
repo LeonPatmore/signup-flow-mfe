@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const button = ref<HTMLButtonElement>(null);
 
-const setupTwo = function (event) {
+const setupTwo = function () {
   console.log(button);
   console.log(button.value.innerHTML);
 };
@@ -19,7 +19,7 @@ const setupTwo = function (event) {
 <script lang="ts">
 export default {
   methods: {
-    onClick: function (event) {
+    onClick: function () {
       console.log(this);
       console.log(event);
       console.log(this.$refs);

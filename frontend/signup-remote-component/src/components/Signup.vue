@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineComponent } from "vue";
 import FormWizard from "./FormWizard.vue";
 import FormStep from "./FormStep.vue";
 import { VDialog } from "@vonage/vivid-vue";
@@ -17,7 +16,7 @@ function onSubmit(data: any) {
   <div>
     <h1>Signup</h1>
 
-    <Button v-on:click="openSignup">Show Signup</Button>
+<!--    <Button v-on:click="openSignup">Show Signup</Button>-->
 
     <VDialog id="signup" ref="signup" headline="Signup">
       <FormWizard @submit="onSubmit">
