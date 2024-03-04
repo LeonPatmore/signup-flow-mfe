@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // import HelloWorld from "./components/HelloWorld.vue";
 // import OnClickExampleVue from "./components/OnClickExample.vue";
-// import Signup from "./components/Signup.vue";
+import Signup from "./components/Signup.vue";
 import OnClickExample from "./components/OnClickExample.vue";
+import Example2 from "./components/Example2.vue";
 </script>
 
 <template>
@@ -16,8 +17,9 @@ import OnClickExample from "./components/OnClickExample.vue";
       </a>
     </div>
     <!-- <HelloWorld msg="Remote Application" />
-    Hello
-    <Signup /> -->
+    Hello -->
+    <Signup />
+    <Example2 />
     <OnClickExample />
   </div>
 </template>

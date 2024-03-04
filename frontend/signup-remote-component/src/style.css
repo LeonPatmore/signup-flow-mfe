@@ -1,3 +1,12 @@
+/* Import Tokens For Light or Dark Theme */
+@import '@vonage/vivid/styles/tokens/theme-light.css';
+/* (Optional) Import Theme Styles */
+@import '@vonage/vivid/styles/core/theme.css';
+/* (Optional) Import Typography Styles */
+@import '@vonage/vivid/styles/core/typography.css';
+/* (Optional) Import Vivid 2 Compatibility Styles */
+@import '@vonage/vivid/styles/tokens/vivid-2-compat.css';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
