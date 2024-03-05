@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FormWizard from "./FormWizard.vue";
 import FormStep from "./FormStep.vue";
-import { VDialog } from "@vonage/vivid-vue";
+import {VButton, VDialog} from "@vonage/vivid-vue";
 import {ref} from "vue";
 
 const signup = ref(null)
@@ -21,11 +21,9 @@ function onSubmit(data: any) {
 
 <template>
   <div>
-    <h1>Signup</h1>
+    <VButton v-on:click="openSignup" label="Show Signup"/>
 
-    <VButton v-on:click="openSignup">Show Signup</VButton>
-
-    <VDialog id="signup" ref="signup" headline="Signup" class="solid" no-light-dismiss>
+    <VDialog id="signup" ref="signup" headline="Signup">
       <template #body>
         <div class="solid">
           <FormWizard @submit="onSubmit">
@@ -44,9 +42,3 @@ function onSubmit(data: any) {
     </VDialog>
   </div>
 </template>
-
-<style>
-.solid {
-  background: rgb(255, 255, 255, 1);
-}
-</style>

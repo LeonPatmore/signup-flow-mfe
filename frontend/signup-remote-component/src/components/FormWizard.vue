@@ -1,18 +1,6 @@
-<template>
-  <form v-on:submit.prevent="onSubmit">
-    <slot />
-
-    <div>
-      <button v-if="hasPrevious" type="button" @click="goToPrev">
-        Previous
-      </button>
-      <button type="submit">{{ isLastStep ? "Submit" : "Next" }}</button>
-    </div>
-  </form>
-</template>
-
 <script setup lang="ts">
 import { ref, computed, provide } from "vue";
+import {VButton, VDivider} from "@vonage/vivid-vue";
 const emit = defineEmits(["submit"]);
 
 const currentStepIdx = ref(0);
@@ -50,3 +38,14 @@ function goToPrev() {
   currentStepIdx.value--;
 }
 </script>
+
+<template>
+  <form v-on:submit.prevent="onSubmit">
+    <slot />
+    <br>
+    <div>
+      <VButton label="Previous" v-if="hasPrevious" type="button" @click="goToPrev"/>
+      <VButton type="submit" :label="isLastStep ? 'Submit' : 'Next'"></VButton>
+    </div>
+  </form>
+</template>

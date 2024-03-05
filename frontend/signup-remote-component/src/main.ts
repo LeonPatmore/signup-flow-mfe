@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
-import './style.css'
+// import './style.css'
 import App from './App.vue'
+import { vivid3, optionalStyles } from '@vonage/vivid-vue';
 
-createApp(App).mount('#app')
+createApp(App).use(vivid3, {
+    tokens: 'light',
+    styles: [optionalStyles.theme, optionalStyles.typography, optionalStyles.vivid2Compat],
+}).mount('#app')

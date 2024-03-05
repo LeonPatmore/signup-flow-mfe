@@ -1,6 +1,6 @@
 <template>
   <div v-if="shouldShow">
-    <slot />
+    <slot/>
   </div>
 </template>
 

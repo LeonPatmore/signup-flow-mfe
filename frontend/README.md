@@ -2,6 +2,14 @@
 
 ## Learning
 
+### Vivid
+
+https://vivid.deno.dev/
+
+Vivid is a set of web components and tools to generate websites with an opinionated design.
+
+A VueJS wrapper exists: https://www.npmjs.com/package/@vonage/vivid-vue.
+
 ### Vue Refs
 
 https://vuejs.org/guide/essentials/reactivity-fundamentals.html#why-refs
