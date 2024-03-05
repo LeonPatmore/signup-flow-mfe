@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/brands"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      "a", "b", "c"
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin" : "*"
+    }
+  }
+}

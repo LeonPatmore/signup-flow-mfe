@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, provide } from "vue";
-import {VButton, VDivider} from "@vonage/vivid-vue";
+import {VButton} from "@vonage/vivid-vue";
 const emit = defineEmits(["submit"]);
 
 const currentStepIdx = ref(0);
