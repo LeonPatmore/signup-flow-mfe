@@ -12,12 +12,14 @@ const creating = ref<Boolean>(false)
 async function tryToCreateBrand() {
   creating.value = true
   await createBrand(brandName.value, brandDisplayName.value)
+      .then(() => {
+        creationError.value = null
+        console.log("Brand created successfully!")
+      })
       .catch(err => {
         creationError.value = err
       })
-      .then(() => {
-        console.log("Brand created successfully!")
-      }).finally(() => creating.value = false)
+      .finally(() => creating.value = false)
 }
 
 </script>
