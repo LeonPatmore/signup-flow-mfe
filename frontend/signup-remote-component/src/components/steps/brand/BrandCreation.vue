@@ -3,18 +3,19 @@ import {VButton, VNote, VTextField} from "@vonage/vivid-vue";
 import {createBrand} from "../../../api/brands.ts";
 import {ref} from "vue";
 
-const brandName = ref<String>()
-const brandDisplayName = ref<String>()
-const creationError = ref<String>()
-
+const brandName = ref<string>()
+const brandDisplayName = ref<string>()
+const creationError = ref<string>()
 const creating = ref<Boolean>(false)
+const emit = defineEmits<{(e: 'setBrand', value: string): void}>()
 
 async function tryToCreateBrand() {
   creating.value = true
-  await createBrand(brandName.value, brandDisplayName.value)
+  const currentBrandName = brandName.value
+  await createBrand(currentBrandName, brandDisplayName.value)
       .then(() => {
         creationError.value = null
-        console.log("Brand created successfully!")
+        emit('setBrand', currentBrandName)
       })
       .catch(err => {
         creationError.value = err

@@ -6,6 +6,15 @@ import MultiviewManager from "./multiview/MultiviewManager.vue";
 import MultiviewPart from "./multiview/MultiviewPart.vue";
 
 const signup = ref(null)
+const signupMultiview = ref(null)
+const brandRef = ref<string>()
+
+function setBrand(val: string) {
+  console.log(`Using brand ${val}`)
+  brandRef.value = val
+  console.log(signupMultiview.value)
+  signupMultiview.value.currentViewIndex++
+}
 
 function openSignup() {
   signup.value?.showModal?.()
@@ -18,9 +27,9 @@ function openSignup() {
     <VDialog id="signup" ref="signup" headline="Signup">
       <template #body>
         <div class="solid">
-          <MultiviewManager name="signup">
+          <MultiviewManager ref="signupMultiview" name="signup">
             <MultiviewPart>
-              <BrandStep/>
+              <BrandStep @setBrand="setBrand"/>
             </MultiviewPart>
 
             <MultiviewPart>
