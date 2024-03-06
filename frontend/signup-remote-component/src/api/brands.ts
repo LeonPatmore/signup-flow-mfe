@@ -8,6 +8,12 @@ async function getBrands() : Promise<Array<String>> {
     return res.data
 }
 
+async function createBrand(name: String, displayName: String) {
+    console.log(`Creating brand with name ${name}`)
+    await axios.post(`http://${host}:${port}/brands`, { name, displayName });
+}
+
 export {
-    getBrands
+    getBrands,
+    createBrand
 }

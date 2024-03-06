@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/brands"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}

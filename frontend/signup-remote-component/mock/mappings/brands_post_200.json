@@ -1,0 +1,21 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "url": "/brands",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath" : {
+          "expression": "$.name",
+          "equalTo": "good"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}
