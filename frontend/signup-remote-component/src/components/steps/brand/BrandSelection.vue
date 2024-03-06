@@ -1,6 +1,11 @@
 <template>
-  <h4>Step 1: Select or create a brand</h4>
+  <p><b>Select or create a brand:</b></p>
   <VLayout row-spacing="medium">
+    <VCard appearance="ghost">
+      <div slot="main">
+        <VButton label="Create a brand" @click="createBrand()"></VButton>
+      </div>
+    </VCard>
     <VCard appearance="ghost" v-if="showBrandList" >
       <div slot="main">
         Select a brand:
@@ -8,16 +13,10 @@
           <VOption v-for="brand in brands" :text="brand"></VOption>
         </VSelect>
         <br>
-        <VButton label="Use selected brand" @click="useSelectedBrand()"/>
+        <VButton class="button" :disabled="!selectedBrand" label="Use selected brand" @click="useSelectedBrand()"/>
       </div>
     </VCard>
     <VNote v-if="!showBrandList" icon="info-line" connotation="information" onnotation="">You currently have no brands</VNote>
-    <VCard appearance="ghost">
-      <div slot="main">
-        Or create a new brand:
-        <VButton label="Create a brand" @click="createBrand()"></VButton>
-      </div>
-    </VCard>
   </VLayout>
 </template>
 

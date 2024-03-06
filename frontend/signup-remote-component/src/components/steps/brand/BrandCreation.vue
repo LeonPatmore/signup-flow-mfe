@@ -27,7 +27,7 @@ async function tryToCreateBrand() {
 
 <template>
   <div>
-    <h4>Step 1: Create a brand</h4>
+    <p><b>Create your brand:</b></p>
     <VNote v-if="creationError" class="block-mb-16" connotation="alert" icon="error">
       Error creating the brand: {{creationError}}
     </VNote>
@@ -35,7 +35,7 @@ async function tryToCreateBrand() {
     <br>
     <VTextField v-model="brandDisplayName" label="Display name" placeholder="Display name" class="input"/>
     <br>
-    <VButton :pending="creating" ref="createButton" label="Create" @click="tryToCreateBrand()"/>
+    <VButton class="button" :pending="creating" ref="createButton" label="Create" @click="tryToCreateBrand()"/>
   </div>
 </template>
 

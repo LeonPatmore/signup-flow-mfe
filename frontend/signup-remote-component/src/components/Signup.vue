@@ -4,16 +4,27 @@ import {ref} from "vue";
 import BrandStep from "./steps/brand/BrandStep.vue";
 import MultiviewManager from "./multiview/MultiviewManager.vue";
 import MultiviewPart from "./multiview/MultiviewPart.vue";
+import AggregatorsStep from "./steps/aggregators/AggregatorsStep.vue";
 
 const signup = ref(null)
 const signupMultiview = ref(null)
 const brandRef = ref<string>()
+const aggregatorsRef = ref<Array<string>>()
+
+function nextView() {
+  signupMultiview.value.currentViewIndex++
+}
 
 function setBrand(val: string) {
   console.log(`Using brand ${val}`)
   brandRef.value = val
-  console.log(signupMultiview.value)
-  signupMultiview.value.currentViewIndex++
+  nextView()
+}
+
+function setAggregators(val: Array<string>) {
+  console.log(`Using aggregators ${val}`)
+  aggregatorsRef.value = val
+  nextView()
 }
 
 function openSignup() {
@@ -28,6 +39,11 @@ function openSignup() {
       <template #body>
         <div class="solid">
           <MultiviewManager ref="signupMultiview" name="signup">
+
+            <MultiviewPart>
+              <AggregatorsStep @setAggregators="setAggregators"/>
+            </MultiviewPart>
+
             <MultiviewPart>
               <BrandStep @setBrand="setBrand"/>
             </MultiviewPart>
@@ -36,9 +52,16 @@ function openSignup() {
               Enter password:
               <input />
             </MultiviewPart>
+
           </MultiviewManager>
         </div>
       </template>
     </VDialog>
   </div>
 </template>
+
+<style>
+.button {
+  margin-top: 20px;
+}
+</style>

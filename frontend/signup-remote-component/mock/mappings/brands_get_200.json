@@ -6,7 +6,7 @@
   "response": {
     "status": 200,
     "jsonBody": [
-      "a", "b", "c"
+      "Some cool company", "An even cooler company", "Not a cool company :("
     ],
     "headers": {
       "Content-Type": "application/json",
