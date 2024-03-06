@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {VButton, VDialog} from "@vonage/vivid-vue";
-import {onBeforeMount, ref} from "vue";
-import {getBrands} from "../api/brands.ts"
+import {ref} from "vue";
 import BrandStep from "./steps/brand/BrandStep.vue";
 import MultiviewManager from "./multiview/MultiviewManager.vue";
 import MultiviewPart from "./multiview/MultiviewPart.vue";
@@ -11,12 +10,6 @@ const signup = ref(null)
 function openSignup() {
   signup.value?.showModal?.()
 }
-
-const brands = ref()
-
-onBeforeMount(async () => {
-  brands.value = await getBrands()
-})
 </script>
 
 <template>
